@@ -1,0 +1,36 @@
+.listContainer {
+  padding: 32px 40px 32px 40px;
+}
+
+.category {
+  text-align: left;
+  margin-right: 115px;
+}
+
+.company {
+  text-align: left;
+  margin-right: 235px;
+}
+
+.status {
+  text-align: center;
+  width: 160px;
+}
+
+.promotion {
+  text-align: center;
+
+  width: 160px;
+}
+
+.country {
+  text-align: center;
+
+  width: 160px;
+}
+
+.joined {
+  text-align: center;
+
+  width: 160px;
+}

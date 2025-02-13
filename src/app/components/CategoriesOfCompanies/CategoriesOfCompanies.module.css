@@ -1,0 +1,17 @@
+.listContainer{
+    width: 652px;
+    padding: 20px;
+
+    border-radius: 4px;
+    
+    background-color: var(--bg-primary);
+}
+
+.listName{
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+

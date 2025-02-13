@@ -1,0 +1,59 @@
+.fromContainer {
+  width: 700px;
+  padding: 28px;
+
+  border-radius: 8px;
+
+  background: var(--bg-primary);
+}
+
+.formName {
+  margin-bottom: 42px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 28px;
+  row-gap: 40px;
+}
+
+.avatarInput {
+  width: 308px;
+  height: 185px;
+}
+
+.inputLabel {
+  width: max-content;
+}
+
+.fakeInput {
+  width: 176px;
+  height: 176px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border: 1px dashed var( --border-dark);
+  border-radius: 50%;
+
+  background: white;
+}
+
+.textInput {
+  width: 308px;
+  padding: 12px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.submitBtn{
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    border-radius: 4px;
+}

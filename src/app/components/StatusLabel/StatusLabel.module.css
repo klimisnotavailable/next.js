@@ -1,0 +1,21 @@
+.statusLabel{
+    width: 117px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.statusCont{
+    width: max-content;
+    padding: 4px 14px 4px 14px;
+
+    border-radius: 28px;
+}
+
+.status{
+    font-weight: 500;
+}
+
+.dot{
+    font-size: 4px;
+}

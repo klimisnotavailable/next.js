@@ -1,0 +1,46 @@
+.article {
+  width: 268px;
+}
+
+.mainInfo {
+  width: 268px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  margin-bottom: 20px;
+
+  border-radius: 4px;
+
+  background-color: var(--side-panel-bg);
+}
+
+.companyLogo {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+}
+
+.detailInfo {
+  width: 268px;
+  height: 520px;
+  padding: 20px;
+
+  background-color: var(--bg-primary);
+  border-radius: 4px;
+}
+
+.aboutCompany{
+  font-weight: 600;
+}
+
+.categories {
+  padding-bottom: 32px;
+
+  font-weight: 400;
+}
+
+.companyDescription {
+  max-height: 520px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-color);
+}

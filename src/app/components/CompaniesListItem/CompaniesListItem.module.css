@@ -1,0 +1,24 @@
+.item {
+  height: 56px;
+  padding-left: 16px;
+
+  background: white;
+
+  border-radius: 4px;
+
+}
+
+.category {
+  width: 175px;
+  
+  font-weight: 500;
+}
+
+.company {
+  width: 325px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  font-weight: 500;
+}

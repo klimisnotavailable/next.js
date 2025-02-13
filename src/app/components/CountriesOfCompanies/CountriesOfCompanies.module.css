@@ -1,0 +1,28 @@
+.countriesContainer {
+  width: 556px;
+  padding: 20px;
+
+  border-radius: 4px;
+
+  background-color: var(--bg-primary);
+
+  overflow: hidden;
+}
+
+.listName {
+  font-size: 20px;
+}
+
+.list {
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  padding-left: 16px;
+
+  gap: 8px;
+}
+/* 
+.listContainer {
+} */

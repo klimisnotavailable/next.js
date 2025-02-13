@@ -1,0 +1,35 @@
+.row {
+    height: 36px;
+  
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  
+  .row:nth-child(odd) {
+    background-color: var(--bg-primary);
+  }
+  
+  .row:nth-child(even) {
+    background-color: white;
+  }
+  
+  .companyData {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  
+    padding-left: 20px;
+  
+    height: 36px;
+  }
+  
+  .companyLogo {
+    border-radius: 20px;
+  }
+  
+  .nameData {
+    border-left: 1px solid var(--bg-primary);
+    border-right: 1px solid var(--bg-primary);
+  }
+  
