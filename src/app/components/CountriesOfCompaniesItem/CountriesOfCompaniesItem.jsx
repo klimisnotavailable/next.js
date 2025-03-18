@@ -1,8 +1,8 @@
 import styles from "./CountriesOfCompaniesItem.module.css";
 
-const CountriesOfCompaniesItem = ({ data, idx }) => {
+const CountriesOfCompaniesItem = ({ data}) => {
   return (
-    <li className={`${styles.item}`} key={idx}>
+    <li className={`${styles.item}`}>
       {data.country} - {data.companies}
     </li>
   );

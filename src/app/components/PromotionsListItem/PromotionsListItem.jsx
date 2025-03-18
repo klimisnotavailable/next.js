@@ -1,13 +1,13 @@
 import styles from "./PromotionsListItem.module.css";
 
 const PromotionsListItem = ({data}) => {
-  const { company, name, income, logo } = data;
+  const { company, name, income, companyLogo } = data;
   return (
     <tr className={`${styles.row}`}>
       <td className={`${styles.companyData}`}>
         <img
           className={`${styles.companyLogo}`}
-          src={logo}
+          src={companyLogo.src}
           alt=""
           width={20}
           height={20}

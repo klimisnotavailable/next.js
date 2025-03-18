@@ -1,6 +1,10 @@
+"use client"
+import { selectUser } from "@/redux/auth/selectors";
 import styles from "./UserMenu.module.css";
+import { useSelector } from "react-redux";
 
 const UserMenu = () => {
+  const user = useSelector(selectUser)
   return (
     <div className={`${styles.authNavContainer} flex items-center gap-3`}>
       <img
@@ -11,8 +15,8 @@ const UserMenu = () => {
         height={44}
       />
       <div>
-        <p className={`${styles.username}`}>Adam Smith</p>
-        <p className={`${styles.usermail}`}>adamsmth@gmail.com</p>
+        <p className={`${styles.username}`}>{user.name}</p>
+        <p className={`${styles.usermail}`}>{user.email}</p>
       </div>
     </div>
   );

@@ -22,3 +22,8 @@
 
   font-weight: 500;
 }
+
+.companyLogo{
+  aspect-ratio: 1/1;
+  border-radius: 16px;
+}

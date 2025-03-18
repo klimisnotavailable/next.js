@@ -10,10 +10,10 @@ import { addCompany } from "@/redux/companies/operations";
 const AddCompanyModal = ({ modalIsOpen, closeModal }) => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (values,actions) => {
+  const handleSubmit = (values, actions) => {
     try {
-      const response = dispatch(addCompany(values))
-      return response
+      const response = dispatch(addCompany(values));
+      return response;
     } catch (error) {
       return error.message;
     }
@@ -23,11 +23,8 @@ const AddCompanyModal = ({ modalIsOpen, closeModal }) => {
     <Modal modalIsOpen={modalIsOpen} closeModal={closeModal}>
       <div className={`${styles.fromContainer}`}>
         <h2 className={`${styles.formName}`}>Add new company</h2>
-        <Formik
-        initialValues={initialValues}
-          onSubmit={handleSubmit}
-        >
-          <Form  className={styles.form}>
+        <Formik onSubmit={handleSubmit}>
+          <Form className={styles.form}>
             <div className="flex flex-col justify-between">
               <label
                 htmlFor="avatar-input"
@@ -52,6 +49,7 @@ const AddCompanyModal = ({ modalIsOpen, closeModal }) => {
               >
                 <p>Status</p>
                 <Field
+                  requried="true"
                   className={`${styles.textInput}`}
                   type="text"
                   name="status"
@@ -65,6 +63,7 @@ const AddCompanyModal = ({ modalIsOpen, closeModal }) => {
               >
                 <p>Country</p>
                 <Field
+                  requried="true"
                   className={`${styles.textInput}`}
                   type="text"
                   name="country"
@@ -80,6 +79,7 @@ const AddCompanyModal = ({ modalIsOpen, closeModal }) => {
               >
                 <p>Name</p>
                 <Field
+                  requried="true"
                   className={`${styles.textInput}`}
                   type="text"
                   name="name"
@@ -93,6 +93,7 @@ const AddCompanyModal = ({ modalIsOpen, closeModal }) => {
               >
                 <p>Category</p>
                 <Field
+                  requried="true"
                   className={`${styles.textInput}`}
                   type="text"
                   name="category"
@@ -106,6 +107,7 @@ const AddCompanyModal = ({ modalIsOpen, closeModal }) => {
               >
                 <p>Joined data</p>
                 <Field
+                  requried="true"
                   className={`${styles.textInput}`}
                   type="text"
                   name="joined"
@@ -119,6 +121,7 @@ const AddCompanyModal = ({ modalIsOpen, closeModal }) => {
               >
                 <p>Description</p>
                 <Field
+                  requried="true"
                   className={`${styles.textInput}`}
                   type="text"
                   name="description"
@@ -129,7 +132,6 @@ const AddCompanyModal = ({ modalIsOpen, closeModal }) => {
             </div>
             <button
               className={`w-full text-center bg-side-panel-bg text-text-light ${styles.submitBtn}`}
-              onClick={() => console.log("click")}
               type="submit"
             >
               Add company
@@ -142,13 +144,3 @@ const AddCompanyModal = ({ modalIsOpen, closeModal }) => {
 };
 
 export default AddCompanyModal;
-
-<form
- 
-  onSubmit={(e) => {
-    console.log(e);
-    e.preventDefault();
-  }}
->
-  <div className="flex flex-col justify-between"></div>
-</form>;

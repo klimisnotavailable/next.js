@@ -5,7 +5,7 @@ import PromotionItem from "../PromotionItem/PromotionItem";
 import Link from "next/link";
 
 const CompaniesListItem = ({ data, idx }) => {
-  const { category, name, status, promotion, country, joinedAt } = data;
+  const { category, name, status, promotion, country, joinedAt,avatar } = data;
   const isoDate = new Date(joinedAt);
   const dateOnly = isoDate.toLocaleDateString("uk-UA");
   return (
@@ -16,7 +16,7 @@ const CompaniesListItem = ({ data, idx }) => {
       >
         <p className={styles.category}>{category}</p>
         <p className={styles.company}>
-          <img src={logo.src} width={32} height={32} alt="" />
+          <img src={avatar ? avatar : logo.src} className={`${styles.companyLogo}`} width={32} height={32} alt="" />
           {name}
         </p>
         <StatusLabel status={status} style={{"marginRight":"80px"}}></StatusLabel>

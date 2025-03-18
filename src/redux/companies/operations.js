@@ -32,7 +32,7 @@ export const addCompany = createAsyncThunk(
   async (company, thunkAPI) => {
     try {
       const response = await axios.post("/companieslist",company);
-      return response;
+      return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

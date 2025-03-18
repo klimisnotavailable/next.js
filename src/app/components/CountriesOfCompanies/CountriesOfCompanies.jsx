@@ -10,7 +10,7 @@ const CountriesOfCompanies = () => {
       <div className="flex justify-between">
         <ul className={`${styles.list}`}>
           {data.map((item, idx) => {
-            return <CountriesOfCompaniesItem data={item} idx={idx} />;
+            return <CountriesOfCompaniesItem key={idx} data={item} />;
           })}
         </ul>
         <World></World>

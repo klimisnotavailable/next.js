@@ -1,6 +1,13 @@
+"use client";
 import "./globals.css";
 import AppBar from "./components/AppBar/AppBar";
 import StoreProvider from "@/app/StoreProvider";
+import { PersistGate } from "redux-persist/es/integration/react";
+import persistor from "@/redux/store";
+import { auth } from "@/firebase/config";
+import { onAuthStateChanged } from "firebase/auth";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const RootLayout = ({ children }) => {
   return (
@@ -15,8 +22,10 @@ const RootLayout = ({ children }) => {
       </head>
       <body className={`flex`}>
         <StoreProvider>
-        <AppBar></AppBar>
-        <main className="w-full">{children}</main>
+          <PersistGate persistor={persistor}>
+            <AppBar></AppBar>
+            <main className="w-full">{children}</main>
+          </PersistGate>
         </StoreProvider>
       </body>
     </html>
