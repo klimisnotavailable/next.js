@@ -34,6 +34,7 @@
 
   border: 1px solid var(--border-color);
   border-radius: 4px;
+  outline: none;
 }
 
 .submitBtn {
@@ -44,4 +45,16 @@
 
   background-color: var(--side-panel-bg);
   color: var(--text-light);
+}
+
+.dontHaveAccount {
+  text-align: center;
+}
+
+.navLink {
+  text-decoration: underline;
+}
+
+.navLink:hover {
+  text-decoration: none;
 }

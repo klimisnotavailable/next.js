@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
 import schema from "./validationSchema";
 import initialValues from "./initialValues";
+import Link from "next/link";
 
 const SignInForm = () => {
   const router = useRouter();
@@ -55,6 +56,12 @@ const SignInForm = () => {
           </button>
         </Form>
       </Formik>
+      <p className={styles.dontHaveAccount}>
+        Don't have account?{" "}
+        <Link className={`${styles.navLink}`} href={"/auth/sign-up"}>
+          Sign Up
+        </Link>
+      </p>
     </div>
   );
 };

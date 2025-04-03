@@ -9,26 +9,10 @@ import { register } from "@/redux/auth/operations";
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
-  // const registerUser = async ({ name, email, password }) => {
-  //   const response = await createUserWithEmailAndPassword(email, password);
-  //   const authError = await error;
-  //   console.log(authError)
-  // };
 
   const handleSubmit = (values, actions) => {
-    dispatch(register(values))
+    dispatch(register(values));
   };
-
-  // useEffect(() => {
-  //   if (registeredUser) {
-  //     console.log(registeredUser)
-  //     sessionStorage.setItem("user", JSON.stringify({ name, email }));
-  //   }
-  //   if (error) {
-  //     return alert(error.message);
-  //   }
-
-  // }, [dispatch,registeredUser,error]);
 
   return (
     <div className={`${styles.formContainer}`}>

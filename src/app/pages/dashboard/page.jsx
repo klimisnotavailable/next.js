@@ -8,15 +8,18 @@ import PromotionsList from "@/app/components/PromotionsList/PromotionsList";
 import { auth } from "@/firebase/config";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "@/redux/auth/selectors";
 
 const Page = () => {
   const router = useRouter();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
-    if (!auth.currentUser) {
+    if (!isLoggedIn) {
       router.push("/auth/sign-up");
     }
-  }, []);
+  }, [isLoggedIn]);
 
   return (
     <section>

@@ -17,8 +17,6 @@ const slice = createSlice({
         console.log(action);
       })
       .addCase(login.fulfilled, (state, action) => {
-        console.log(action);
-        console.log(action.payload);
         state.user.email = action.payload.email;
         state.user.name = action.payload.name;
         state.accessToken = action.payload.token;
