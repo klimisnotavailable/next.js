@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
 import { getCompany } from "@/utils/axios";
 import { usePathname } from "next/navigation";
+import { selectIsLoggedIn } from "@/redux/auth/selectors";
 import CompanyDescr from "@/app/components/CompanyDescr/CompanyDescr";
 import CompanyPromotions from "@/app/components/CompanyPromotions/CompanyPromotions";
 import AddPromotionsForm from "@/app/components/AddPromotionsForm/AddPromotionsForm";
@@ -11,17 +14,24 @@ import AddPromotionModal from "@/app/components/AddPromotionModal/AddPromotionMo
 export default function Page() {
   const [isOpen, setIsOpen] = useState(false);
   const [company, setCompany] = useState({});
-  const router = usePathname();
-  const id = router.split("/").pop();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const router = useRouter();
+  const url = usePathname();
+  const id = url.split("/").pop();
 
   const openModal = () => {
-    setIsOpen(true)
+    setIsOpen(true);
   };
 
   const closeModal = () => {
-    setIsOpen(false)
+    setIsOpen(false);
   };
 
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push("/auth/sign-up");
+    }
+  }, [isLoggedIn]);
 
   useEffect(() => {
     if (id == null) {
@@ -42,8 +52,8 @@ export default function Page() {
 
   return (
     <section className="p-10">
-      <AddPromotionsForm openModal={openModal}/>
-      <AddPromotionModal modalIsOpen={isOpen} closeModal={closeModal}/>
+      <AddPromotionsForm openModal={openModal} />
+      <AddPromotionModal modalIsOpen={isOpen} closeModal={closeModal} />
       <div className="flex gap-5">
         <CompanyDescr data={company} />
         <CompanyPromotions />

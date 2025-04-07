@@ -11,8 +11,7 @@ import { selectIsLoading } from "@/redux/companies/selectors";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/firebase/config";
 import { useRouter } from "next/navigation";
-import { getAuth } from "firebase/auth";
-import { app } from "@/firebase/config";
+import { selectIsLoggedIn } from "@/redux/auth/selectors";
 
 export default function Page() {
   const [user] = useAuthState(auth);
@@ -20,6 +19,7 @@ export default function Page() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const [isOpen, setIsOpen] = useState(false);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const closeModal = () => {
     setIsOpen(false);
@@ -28,6 +28,12 @@ export default function Page() {
   const openModal = () => {
     setIsOpen(true);
   };
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      router.push("/auth/sign-up");
+    }
+  }, [isLoggedIn]);
 
   useEffect(() => {
     const fetchCompanies = async () => {
